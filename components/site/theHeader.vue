@@ -10,19 +10,19 @@
 
 			<nav class="header__navigation">
 				<ul class="header__navigation-list" id="menu">
-					<li class="header__navigation-item" data-menuanchor="firstPage">
+					<li class="header__navigation-item">
 						<a href="#generalBlock">Главная</a>
 					</li>
-					<li class="header__navigation-item" data-menuanchor="secondPage">
+					<li class="header__navigation-item">
 						<a href="#aboutBlock">Обо мне</a>
 					</li>
-					<li class="header__navigation-item" data-menuanchor="portfolioBlock">
+					<li class="header__navigation-item">
 						<a href="#portfolioBlock">Мои работы</a>
 					</li>
-					<li class="header__navigation-item" data-menuanchor="priceBlock">
+					<li class="header__navigation-item">
 						<a href="#priceBlock">Прайс</a>
 					</li>
-					<li class="header__navigation-item" data-menuanchor="regisrBlock">
+					<li class="header__navigation-item">
 						<a href="#regisrBlock">Запись</a>
 					</li>
 				</ul>

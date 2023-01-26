@@ -23,7 +23,7 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/fullpage', ssr: false }
+    
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,17 +38,17 @@ export default {
     scss: [
       '~assets/scss/_variables.scss',
       '~assets/scss/_mixins.scss',
-      '~assets/scss/main.scss'
+      '~assets/scss/main.scss',
     ]
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    ['nuxt-fullpage.js']
+    
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: null
-  }
+  },
 }
