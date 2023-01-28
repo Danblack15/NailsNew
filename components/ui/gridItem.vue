@@ -9,7 +9,11 @@
 			}]" 
 			:style="{ background: randomBackground() }"
 		>
-
+			<img 
+				:src="imgLink(work.link)" 
+				alt="ногти" 
+				class=""
+			/>
 		</div>
 		<div :class="['grid-item__modal', {
 			'grid-item__modal--open': showDesc
@@ -44,6 +48,22 @@ export default {
 
 		showDescription() {
 			this.showDesc = !this.showDesc
+		},
+
+		imgLink(link) {
+			const types = ['png', 'jpg', 'jpeg']
+
+			let http = new XMLHttpRequest()
+
+			for (let i = 0; i < types.length; i++) {
+				const type = types[i];
+				
+				http.open('HEAD', `${link}.${type}`, false)
+				http.send()
+				
+				if (http.status != 404)
+					return link+'.'+type
+			}
 		}
 	}
 }
@@ -61,14 +81,24 @@ export default {
 	}
 
 	&__img {
+		position: relative;
 		width: 100%;
 		height: 100%;
 		transform-style: preserve-3d;
-		transition: .4s all;
+		transition: .7s all;
+		backface-visibility: hidden;
 
 		&--close {
 			transform: rotateY(-180deg);
-			opacity: 0;
+		}
+
+		& img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 
@@ -83,12 +113,12 @@ export default {
 		justify-content: center;
 		align-items: center;
 		padding: 0 15px;
+		backface-visibility: hidden;
 
 		transform: rotateY(180deg);
 		transform-style: preserve-3d;
-		opacity: 0;
 		visibility: hidden;
-		transition: .4s all;
+		transition: .7s all;
 
 		&--open {
 			opacity: 1;

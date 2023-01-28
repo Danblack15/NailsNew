@@ -8,7 +8,7 @@
     <theHeader class="index-page__header" />
 
     <main class="index-page__content wrapper">
-      <section class="index-page__content-inside">
+      <section class="index-page__content-inside" v-if="isInit">
         <General class="index-page__content-item" />
         <About class="index-page__content-item" />
         <Portfolio class="index-page__content-item"/>
@@ -33,8 +33,12 @@ export default {
 
   data() {
     return {
-      
+      isInit: false
     }
+  },
+
+  mounted() {
+    this.isInit = true
   },
 
   name: 'IndexPage'
@@ -73,7 +77,19 @@ export default {
     position: absolute;
     top: 0;
     right: 0;
-    z-index: 11;
+    z-index: 101;
+
+    animation: tree-branch;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    animation-fill-mode: forwards;
+    transform: translate(100px, -100px) rotate(25deg);
+  }
+
+  @keyframes tree-branch {
+    100% {
+      transform: translate(0) rotate(0);
+    }
   }
 }
 
