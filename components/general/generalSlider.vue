@@ -55,6 +55,7 @@ export default {
 				nextEl: '.slider__btn-next',
 				prevEl: '.slider__btn-prev',
 			},
+			loop: true
 		})
 	},
 
@@ -67,16 +68,16 @@ export default {
 			for (let i = 0; i < types.length; i++) {
 				const type = types[i];
 				
-				// http.open('HEAD', `${link}.${type}`, false)
-				// http.send()
+				http.open('HEAD', `${link}.${type}`, false)
+				http.send()
 				
-				// if (http.status != 404)
-				// 	return link+'.'+type
-
-				var img = new Image()
-				img.src = link+'.'+type
-				if (img.height != 0)
+				if (http.status != 404)
 					return link+'.'+type
+
+				// var img = new Image()
+				// img.src = link+'.'+type
+				// if (img.height != 0)
+				// 	return link+'.'+type
 			}
 		}
 	}

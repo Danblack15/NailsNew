@@ -44,7 +44,7 @@ export default {
 		width: 100%;
 		height: 245px;
 		background: #E88A8A;
-		transition: .5s;
+		transition: 1s;
 
 		&::after {
 			content: '';

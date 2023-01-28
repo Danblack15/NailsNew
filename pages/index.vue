@@ -11,6 +11,7 @@
       <section class="index-page__content-inside">
         <General class="index-page__content-item" />
         <About class="index-page__content-item" />
+        <Portfolio class="index-page__content-item"/>
       </section>
     </main>
   </div>
@@ -20,13 +21,16 @@
 import theHeader from '../components/site/theHeader';
 import General from '../components/sections/general';
 import About from '../components/sections/about';
+import Portfolio from '../components/sections/portfolio';
 
 export default {
   components: {
     theHeader,
     General,
-    About
+    About,
+    Portfolio
   },
+
   data() {
     return {
       
@@ -42,7 +46,7 @@ export default {
   &__header {
     position: fixed;
     top: 0;
-    z-index: 10;
+    z-index: 100;
   }
 
   &__content {
