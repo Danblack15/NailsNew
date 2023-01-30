@@ -73,11 +73,6 @@ export default {
 				
 				if (http.status != 404)
 					return link+'.'+type
-
-				// var img = new Image()
-				// img.src = link+'.'+type
-				// if (img.height != 0)
-				// 	return link+'.'+type
 			}
 		}
 	}

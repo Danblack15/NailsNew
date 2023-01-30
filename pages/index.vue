@@ -1,10 +1,5 @@
 <template>
   <div class="index-page">
-    <img 
-      src="/img/tree-branch.png" 
-      alt="tree-branch" 
-      class="index-page__tree-branch" 
-    />
     <theHeader class="index-page__header" />
 
     <main class="index-page__content wrapper">
@@ -14,6 +9,13 @@
         <Portfolio class="index-page__content-item"/>
       </section>
     </main>
+
+    <img 
+      src="/img/tree-branch.png" 
+      alt="tree-branch" 
+      class="index-page__tree-branch" 
+      v-if="isInit"
+    />
   </div>
 </template>
 
@@ -47,6 +49,7 @@ export default {
 
 <style lang="scss">
 .index-page {
+  overflow-x: hidden;
   &__header {
     position: fixed;
     top: 0;
@@ -79,16 +82,41 @@ export default {
     right: 0;
     z-index: 101;
 
-    animation: tree-branch;
+    animation-name: tree-branch;
     animation-duration: 1s;
     animation-delay: .5s;
     animation-fill-mode: forwards;
-    transform: translate(100px, -100px) rotate(25deg);
+    transform: translate(40%, -30%) rotate(25deg);
+
+    @media (max-width: $xxl) {
+      width: 300px;
+    }
+
+    @media (max-width: $xl) {
+      animation-name: tree-branch-tablet;
+    }
+
+    @media (max-width: $md) {
+      animation-name: tree-branch-mobile;
+      width: 150px;
+    }
   }
 
   @keyframes tree-branch {
     100% {
-      transform: translate(0) rotate(0);
+      transform: translate(30%, -20%) rotate(0);
+    }
+  }
+
+  @keyframes tree-branch-tablet {
+    100% {
+      transform: translate(20%, 10%) rotate(0);
+    }
+  }
+
+  @keyframes tree-branch-mobile {
+    100% {
+      transform: translate(25%, 10%) rotate(-20deg);
     }
   }
 }
