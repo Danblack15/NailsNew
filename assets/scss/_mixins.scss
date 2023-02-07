@@ -1,7 +1,19 @@
+@mixin big-title {
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 85px;
+}
+
 @mixin h1 {
     font-weight: 700;
     font-size: 48px;
     line-height: 64px;
+}
+
+@mixin h1--tablet {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
 }
 
 @mixin h2 {

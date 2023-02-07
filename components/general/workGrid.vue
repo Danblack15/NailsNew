@@ -3,7 +3,7 @@
 		<GridItem 
 			class="work-grid__item" 
 			v-for="work in myWorks" 
-			:key="work.if"
+			:key="work.id"
 			:work="work"
 		/>
 	</div>
@@ -36,8 +36,13 @@ export default {
 	grid-row-gap: 30px;
 
 	&__item {
-		width: 265px;
-		height: 265px;
+		width: 256px;
+		height: 256px;
+
+		@media (max-width: $lg) {
+			width: 150px;
+			height: 150px;
+		}
 	}
 }
 </style>

@@ -15,16 +15,21 @@ export default {
 
 <style lang="scss" scoped>
 .button {
+	@include h2;
+
 	position: relative;
-	font-weight: 700;
-	font-size: 24px;
-	line-height: 32px;
 	color: #0D3F7C;
 	padding: 21px 137px;
 	border-radius: 50px;
 	border: none;
 	overflow: hidden;
 	cursor: pointer;
+
+	@media (max-width: $lg) {
+		@include nav-mobile;
+		font-weight: 700;
+		padding: 8px 74px;
+	}
 
 	&:hover {
 		.button__liquid {
@@ -59,6 +64,11 @@ export default {
 			background: rgba(255, 255, 255, 0.322);
 			animation: animate 10s linear infinite;
 			z-index: 1;
+
+			@media (max-width: $lg) {
+				width: 210%;
+				height: 190%;
+			}
 		}
 
 		&::before {
@@ -73,6 +83,11 @@ export default {
 			border-radius: 45%;
 			background: rgba(254, 243, 243, 0.203);
 			animation: animate 5s linear infinite;
+
+			@media (max-width: $lg) {
+				width: 210%;
+				height: 190%;
+			}
 		}
 
 	}
@@ -87,20 +102,4 @@ export default {
 		}
 	}
 }
-
-// @media screen and (max-height: 950px) {
-// 	.button {
-// 		&__liquid {
-// 			&::after {
-// 				width: 140%;
-// 				height: 310%;
-// 			}
-
-// 			&::before {
-// 				width: 140%;
-// 				height: 310%;
-// 			}
-// 		}
-// 	}
-// }
 </style>

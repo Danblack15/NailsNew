@@ -75,10 +75,13 @@ export default {
 	perspective: 500px;
 	transition: .2s transform;
 	cursor: pointer;
-	
-	&:hover {
-		transform: scale(1.05);
+
+	@media (min-width: $md) {
+		&:hover {
+			transform: scale(1.05);
+		}
 	}
+
 
 	&__img {
 		position: relative;
@@ -120,6 +123,10 @@ export default {
 		visibility: hidden;
 		transition: .7s all;
 
+		@media (max-width: $lg) {
+			padding: 0 5px;
+		}
+
 		&--open {
 			opacity: 1;
 			visibility: visible;
@@ -133,6 +140,11 @@ export default {
 		text-align: center;
 		opacity: 0;
 		transition: .2s;
+
+		@media (max-width: $lg) {
+			@include nav-mobile;
+			font-weight: 700;
+		}
 
 		&--show {
 			opacity: 1;

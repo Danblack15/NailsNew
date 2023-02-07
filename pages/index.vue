@@ -7,6 +7,7 @@
         <General class="index-page__content-item" />
         <About class="index-page__content-item" />
         <Portfolio class="index-page__content-item"/>
+        <Price class="index-page__content-item"/>
       </section>
     </main>
 
@@ -20,17 +21,19 @@
 </template>
 
 <script>
-import theHeader from '../components/site/theHeader';
-import General from '../components/sections/general';
-import About from '../components/sections/about';
-import Portfolio from '../components/sections/portfolio';
+import theHeader from '@/components/site/theHeader'
+import General from '@/components/sections/general'
+import About from '@/components/sections/about'
+import Portfolio from '@/components/sections/portfolio'
+import Price from '@/components/sections/price'
 
 export default {
   components: {
     theHeader,
     General,
     About,
-    Portfolio
+    Portfolio,
+    Price
   },
 
   data() {

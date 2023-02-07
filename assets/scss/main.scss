@@ -31,4 +31,16 @@ img {
 
 .wrapper {
 	padding: 128px 100px 100px 100px;
+
+	@media (max-width: $xxl) {
+		padding: 128px 30px 30px 30px;
+	}
+
+	@media (max-width: $xl) {
+		padding: 88px 30px 30px 30px;
+	}
+
+	@media (max-width: $md) {
+		padding: 76px 16px 16px 16px;
+	}
 }

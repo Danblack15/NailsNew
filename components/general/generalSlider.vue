@@ -44,18 +44,17 @@ export default {
 	},
 
 	mounted() {
-		const swiper = new Swiper('.swiper', {
+		const swiper = new Swiper('.slider', {
 			modules: [Navigation, Pagination],
 			pagination: {
-				el: '.swiper-pagination',
+				el: '.slider__pagination',
 				clickable: true,
 				dynamicBullets: true
 			},
 			navigation: {
 				nextEl: '.slider__btn-next',
 				prevEl: '.slider__btn-prev',
-			},
-			loop: true
+			}
 		})
 	},
 
@@ -97,6 +96,15 @@ export default {
 		justify-content: space-between;
 
 		z-index: 2;
+
+		@media (max-width: $lg) {
+			bottom: 10px;
+			padding: 0 17px;
+		}
+		
+		@media (max-width: $md) {
+			display: none;
+		}
 	}
 
 	&__btn {
@@ -114,6 +122,15 @@ export default {
 			transform: scale(1.1);
 			background: #F8B9BC;
 		}
+
+		@media (max-width: $lg) {
+			width: 36px;
+			height: 36px;
+
+			& img {
+				height: 14px;
+			}
+		}
 	}
 
 	&__btn-next {
@@ -124,6 +141,14 @@ export default {
 
 	&__pagination {
 		bottom: 44px;
+
+		@media (max-width: $lg) {
+			bottom: 22px;
+		}
+
+		@media (max-width: $md) {
+			bottom: 10px;
+		}
 	}
 
 	&__item {
@@ -149,13 +174,24 @@ export default {
 		transform: scale(1);
 		margin: 3px 8px;
 
+		@media (max-width: $lg) {
+			width: 6px;
+			height: 6px;
+		}
+
 		&-active {
 			width: 16px;
 			height: 16px;
 			background: #193A6A;
 			transform: scale(1);
 			margin: 0 8px;
+
+			@media (max-width: $lg) {
+				width: 12px;
+				height: 12px;
+			}
 		}
+		
 	}
 }
 </style>
